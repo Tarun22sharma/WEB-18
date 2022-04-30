@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="common.css" />
 </head>
 <style>
+    form{
+        height: 500px;
+        margin-top: 60px;
+    }
     body{
         background-color:palegreen
     }
@@ -16,6 +20,8 @@
 <body>
     <form>
             <h2>Sign Up</h2>
+            <h4>Your Name</h4>
+            <input id="name" type="text" placeholder="Enter your name" />
             <h4>Phone Number</h4>
             <input id="phonenumber" type="number" placeholder="Enter phone number" />
             <h4>Email</h4>
@@ -35,6 +41,7 @@
         event.preventDefault();
 
         var signupObj = {
+            userName : form.name.value,
             userNum : form.phonenumber.value , 
             userEmail : form.email.value ,
             userPassword : form.password.value ,
