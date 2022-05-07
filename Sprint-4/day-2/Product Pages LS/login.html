@@ -13,6 +13,9 @@
         #submitbtn{
             background-color: blue;
         }
+        #crt{
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -24,6 +27,8 @@
         <input id="password" type="password" placeholder="Enter password" />
         <br/>
         <input id="submitbtn" type="submit" value="SIGN IN" />  
+        <br/>
+        <button id="crt"><a href="signup.html">Create an Account</a> </button>
     </form>
 </body>
 </html>
@@ -41,12 +46,16 @@
 
         if(userData === null){
             alert("Please create an account")
+            window.location.href="signup.html" ;
         }else if(userData.userEmail==data.email && userData.userPassword==data.password){
             alert("Sign in Successful");
             localStorage.setItem("signin",JSON.stringify(userData))
+            window.location.href="mens.html";
         }else{
             alert("User Does not exist")
         }
+
+        // window.location.href="mens.html";
          
 
 })

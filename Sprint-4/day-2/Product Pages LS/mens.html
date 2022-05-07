@@ -5,19 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="navbar.css" />
     <style>
-      #container{
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
-        gap: 20px;
-        justify-content: space-evenly;
-      }
-      button{
-        margin-top: 20px;
-      }
+      
     </style>
 </head>
 <body>
+    <div id="navbar">
+      <div>
+          <h3>Reebok</h3>
+      </div>
+      <div>
+          <h3><a href="mens.html">Men</a></h3>
+          <h3><a href="womens.html">Women</a></h3>
+          <h3><a href="login.html">Login</a></h3>
+          <h3><a href="cart.html">Cart</a></h3>
+      </div>
+    </div>
     <h2>Mens page</h2>
     <div id="container"></div>
 </body>
@@ -280,6 +285,8 @@
     },
   ];
 
+  let cartLSData=JSON.parse(localStorage.getItem("masai-cart")) || [] ;
+
   mensData.forEach(function(el){
       var box = document.createElement("div");
 
@@ -297,11 +304,21 @@
 
       var btn = document.createElement("button");
       btn.innerText = "Add to Cart";
+      btn.addEventListener("click",function(){
+        AddToCart(el);
+      })
 
       box.append(image,name,price,soPrice,btn);
 
       document.querySelector("#container").append(box);
 
   })
+
+  function AddToCart(element){
+        cartLSData.push(element);
+        localStorage.setItem("masai-cart",JSON.stringify(cartLSData));
+        alert("Product added successfully");
+    }
+
 
 </script>
