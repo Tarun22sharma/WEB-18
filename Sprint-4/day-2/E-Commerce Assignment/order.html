@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place-Order</title>
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        form {
+            width: 400px;
+            display: grid;
+            gap: 20px;
+            font-family: sans-serif;
+            padding: 10px 30px 30px;
+            margin: auto;
+            margin-top: 40px;
+            font-size: 18px;
+            font-weight: lighter;
+        }
+
+        #payment {
+            box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+            width: 500px;
+            margin: auto;
+            border-radius: 10px;
+            padding-bottom: 20px;
+            margin-bottom:30px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            height: 55px;
+            border-radius: 5px;
+            border: rgba(128, 128, 128, 0.23) solid 0.1px;
+            padding: 0px 20px;
+            font-size: 16.4px;
+            font-family:sans-serif;
+        }
+
+        input:last-child {
+            height: 55px;
+            color: grey;
+        }
+        #sub{
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="log">
+            <h1>Masai E- Comm</h1>
+        </div>
+        <div class="text">
+            <h2>Men</h2>
+            <h2><a href="products.html">Women</a> </h2>
+            <h2>Kids</h2>
+        </div>
+        <div class="user">
+            <h2><a href="cart.html">Cart</a></h2>
+            <h2><a href="index.html">Home</a> </h2>
+        </div>
+    </div>
+    <div id="payment">
+        <form id="form">
+            <h2>Payment Details</h2>
+            <label>Name</label>
+            <input id="name" type="text" placeholder="Enter Name" minlength="5" required />
+            <label>Card Number</label>
+            <input id="cnumber" type="number" placeholder="Enter Card Number" required />
+            <label>CVV</label>
+            <input id="cvv" type="number" placeholder="Enter CVV" required />
+            <label>Expiry Date</label>
+            <input id="expiryDate"  type="month" required />
+            <input id="sub" type="submit" value="SUBMIT" />
+        </form>
+        </div>
+</body>
+</html>
